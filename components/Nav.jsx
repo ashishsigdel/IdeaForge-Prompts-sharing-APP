@@ -9,7 +9,6 @@ const Nav = () => {
   const { data: session } = useSession();
 
   const [providers, setProviders] = useState(null);
-  console.log(providers);
   const [toggleDropdown, setToggleDropdown] = useState(false);
 
   useEffect(() => {
