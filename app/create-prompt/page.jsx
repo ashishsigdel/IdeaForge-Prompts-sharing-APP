@@ -11,14 +11,17 @@ const CreatePrompt = () => {
   const { data: session } = useSession();
 
   const [submitting, setIsSubmitting] = useState(false);
-  const [post, setPost] = useState({ prompt: "", tag: "" });
+  const [post, setPost] = useState({
+    prompt: "",
+    tag: "",
+  });
 
   const createPrompt = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/api/prompt/new", {
+      const res = await fetch("/api/prompt/new", {
         method: "POST",
         body: JSON.stringify({
           prompt: post.prompt,
@@ -27,7 +30,7 @@ const CreatePrompt = () => {
         }),
       });
 
-      if (response.ok) {
+      if (res.ok) {
         router.push("/");
       }
     } catch (error) {
