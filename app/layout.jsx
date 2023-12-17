@@ -3,13 +3,16 @@ import Provider from "@components/Provider";
 import "@styles/globals.css";
 
 export const metadata = {
-  title: "ideaforge",
+  title: "IdeaForge",
   description: "Discover & Share AI prompts",
 };
 
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/assets/images/logo.svg" type="image/svg+xml" />
+      </head>
       <body>
         <Provider>
           <div className="main">
